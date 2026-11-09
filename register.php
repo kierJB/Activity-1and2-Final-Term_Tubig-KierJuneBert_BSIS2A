@@ -50,53 +50,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
+    <title>Register</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html, body {
+            min-height: 100%;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            background: #8FC96F;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            padding: 15px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-left: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.67);
+        }
+
+        .logo img {
+            border-radius: 50px;
+            box-shadow: 0 4px 5px -2px rgba(0, 0, 0, 0.3);
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            margin: 50px 0 30px 0;
+            flex: 1;
+        }
+
+        .main-logo {
+            border-radius: 100%;
+            box-shadow: 0 4px 5px -2px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .field {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .field img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+
+        #uname, #password, #password2 {
+            padding: 20px;
+            width: 240px;
+            margin-top: 10px;
+            border: 1px solid black;
+            box-shadow: 0 4px 5px -2px rgba(0, 0, 0, 0.3);
+        }
+
+        .signin, .btn {
+            padding: 5px;
+            width: 300px;
+            margin-bottom: 8px;
+            box-shadow: 0 4px 5px -2px rgba(0, 0, 0, 0.3);
+        }
+
+        .notification-area {
+            width: 300px;
+            height: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .notification {
+            font-size: 13px;
+            margin: 2px 0;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .account {
+            margin-top: 5px;
+        }
+
+        footer {
+            padding: 30px;
+            background: #8FC96F;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Baranggay Resident Record System</h1>
-    <h2>Create your Account</h2>
-    <br>
-    <?php foreach ($errors as $e): ?>
-    <p class="notification" style="color: red;"><?= h($e) ?></p>
-    <?php endforeach; ?>
-    <br>    
-    <?php foreach ($mess as $m): ?>
-        <p class="notification" style="color: green;"><?= h($m) ?></p>
-    <?php endforeach; ?>
 
-    <form action="" method="post">
-        <label for="">Username: </label>
-        <input type="text" name="uname" id="" placeholder="Enter Username" required autofocus>
-        <br>
-        <br>
-        <label for="">Password: </label>
-        <input type="password" name="password" id="password" placeholder="Enter Password" required>
-        <button type="button" onclick="togglePassword('password', this)">Show password</button>
-        <br>
-        <br>
-        <label for="">Re-enter password: </label>
-        <input type="password" name="password2" id="password2" placeholder="Re-enter Password" required>
-        <button type="button" onclick="togglePassword('password2', this)">Show password</button>
-        <br>
-        <br>
+    <div class="nav">
+        <div class="logo">
+            <img src="baranggay.png" alt="Barangay Logo" width="55px">
+            <h2>Baranggay Resident Record System</h2>
+        </div>
+    </div>
 
-        <input type="submit" value="Register">
+    <div class="main">
 
-    </form>
-    <br><br>
-    <p>Already have an account?<a href="index.php">Sign in</a> </p>
+        <img src="baranggay.png" alt="Barangay Logo" width="155px" class="main-logo">
+
+        <form action="" method="post">
+
+            <div class="field">
+                <img src="username.png" alt="Username Icon">
+                <input type="text" name="uname" id="uname"
+                    placeholder="Enter Username" required autofocus>
+            </div>
+
+            <div class="field">
+                <img src="password.png" alt="Password Icon">
+                <input type="password" name="password" id="password"
+                    placeholder="Enter Password" required>
+            </div>
+
+            <div class="field">
+                <img src="repass.png" alt="Password Icon">
+                <input type="password" name="password2" id="password2"
+                    placeholder="Re-enter Password" required>
+            </div>
+
+            <div class="notification-area">
+                <?php foreach ($errors as $e): ?>
+                    <p class="notification error"><?= h($e) ?></p>
+                <?php endforeach; ?>
+
+                <?php foreach ($mess as $m): ?>
+                    <p class="notification success"><?= h($m) ?></p>
+                <?php endforeach; ?>
+            </div>
+
+            <input type="submit" value="Register" class="signin">
+
+            <button type="button" onclick="togglePassword(this)" class="btn">
+                Show password
+            </button>
+
+        </form>
+
+        <p class="account">
+            Already have an account? <a href="index.php">Sign in</a>
+        </p>
+
+    </div>
+
+    <footer></footer>
 
     <script>
-      function togglePassword(id, showR) {
-            const newPass = document.getElementById(id);
+        function togglePassword(button) {
+            const password1 = document.getElementById('password');
+            const password2 = document.getElementById('password2');
 
-            if (newPass.type === "password") {
-                newPass.type = "text";
-                showR.innerHTML = "Hide password";
-            } else {
-                newPass.type = "password";
-                showR.innerHTML = "Show password";
-            }
+            const isHidden = password1.type === "password";
+
+            password1.type = isHidden ? "text" : "password";
+            password2.type = isHidden ? "text" : "password";
+
+            button.innerHTML = isHidden ? "Hide password" : "Show password";
         }
 
         setTimeout(() => {
@@ -107,9 +258,4 @@
     </script>
 
 </body>
-
 </html>
-
-
-
-
