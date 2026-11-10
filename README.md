@@ -1,10 +1,13 @@
  <mark>REMINDER:</mark> If you want to see, in a good format visualization (Just click " CTRL + SHIFT + V " )
 
+_____________________________________________________________________________________________________________
+## DEFAULT PASSWORD FOR ADMIN
 
+Email: admin <br>
+Pass: admin123
 
 _____________________________________________________________________________________________________________
 ## ACTIVITY #1 : Create Sign In and Register Page Of Your Website (Any Website)
-_____________________________________________________________________________________________________________
 
 ***Resident Records System***
 - Login/Sign In
@@ -31,7 +34,7 @@ ________________________________________________________________________________
 
 _____________________________________________________________________________________________________________
 ## ACTIVITY #2 : Apply the access control, User management,and Crud Operations to your activity #1 website. 	
-_____________________________________________________________________________________________________________
+
 
 Mga page na idaragdag:
 

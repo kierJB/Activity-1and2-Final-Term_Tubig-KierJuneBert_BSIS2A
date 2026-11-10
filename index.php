@@ -62,6 +62,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            background: #D3E6C8;
         }
 
 
@@ -114,6 +115,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
             padding: 40px;
             margin: 80px 0 30px 0;
             flex: 1;
+
         }
         .main-logo{
             border-radius: 100%;
@@ -133,6 +135,10 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
             margin-bottom: 8px;
             box-shadow: 0 4px 5px -2px rgba(0, 0, 0, 0.3);
 
+        }
+        .link{
+            text-decoration: none;
+            color: darkgreen;
         }
         .btn{
             padding: 5px;
@@ -177,7 +183,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
     <!-- <h1>Baranggay Biringan Resident</h1>
     <br>
     <h2>Sign In To Your Account</h2> -->
-    <img src="baranggay.png" alt="main logo png" width="155px">
+    <img src="baranggay.png" alt="main logo png" width="155px" class="main-logo">
 
     <form action="" method="post">
         <img src="username.png" alt="username png" width="30px">
@@ -196,7 +202,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
 
     
     </form>
-    <p>Have no account?<a href="register.php">Register</a> </p>
+    <p>Have no account?<a href="register.php" class="link">Register</a> </p>
 
     </div>
 

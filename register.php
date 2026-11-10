@@ -68,6 +68,7 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            background: #D3E6C8;;
         }
 
         .nav {
@@ -94,6 +95,7 @@
         .logo img {
             border-radius: 50px;
             box-shadow: 0 4px 5px -2px rgba(0, 0, 0, 0.3);
+            
         }
 
         .main {
@@ -143,7 +145,10 @@
             margin-bottom: 8px;
             box-shadow: 0 4px 5px -2px rgba(0, 0, 0, 0.3);
         }
-
+        .link{
+            text-decoration: none;
+            color: darkgreen;
+        }
         .notification-area {
             width: 300px;
             height: 40px;
@@ -206,7 +211,7 @@
             </div>
 
             <div class="field">
-                <img src="repass.png" alt="Password Icon">
+                <img src="Refresh.png" alt="Password Icon">
                 <input type="password" name="password2" id="password2"
                     placeholder="Re-enter Password" required>
             </div>
@@ -230,7 +235,7 @@
         </form>
 
         <p class="account">
-            Already have an account? <a href="index.php">Sign in</a>
+            Already have an account? <a href="index.php" class="link">Sign in</a>
         </p>
 
     </div>
