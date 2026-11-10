@@ -35,29 +35,38 @@ ________________________________________________________________________________
 _____________________________________________________________________________________________________________
 ## ACTIVITY #2 : Apply the access control, User management,and Crud Operations to your activity #1 website. 	
 
-
-Mga page na idaragdag:
-
 ### First to do — `logout.php`
 
-- Tatapusin ang login session ng user at ibabalik siya sa sign-in page.
+- Tinatapos ang kasalukuyang user session.
+- Ibinalik ang user sa sign-in page.
 
 ### Second to do — `users.php`
 
-- Para sa admin na mamahala ng user accounts.
-- Tingnan ang users, aprubahan o i-disable ang account, at baguhin ang role.
+- Admin lang ang may access sa page na ito.
+- Ipinapakita ang mga registered user accounts.
+- Maaaring i-activate, i-disable, baguhin ang role, o i-delete ng admin ang user account.
+- Pending o disabled na account ay hindi makakapasok sa system.
 
 ### Third to do — `residents.php`
 
-- Katumbas ng `products.php` ni Ma’am.
-- Dito gagawin ang CRUD ng resident records: Add, View, Update, Delete.
+- Admin at active staff lang ang may access sa page na ito.
+- Dito maaaring mag-Add, View, Update, at Delete ng resident records.
+- Ginagamit ang kasalukuyang resident fields: first name, last name, birth date, sex, civil status, at street.
+- Itinatala rin ang user na gumawa ng record at ang petsa ng paggawa nito.
 
-***Access control:***
-- Admin lang ang makakagamit ng users.php.
-- Admin at active staff ang makakagamit ng residents.php.
-- Pending o disabled na account ay hindi makakapasok sa system.
+### Access Control
 
+- Admin lang ang makakagamit ng `users.php`.
+- Admin at active staff ang makakagamit ng `residents.php`.
+- Ang pending o disabled na account ay hindi makakapasok sa system.
+- Bine-verify ng system ang user session, role, at account status sa protected pages.
 
+### Database at Security
+
+- Kumokonekta ang system sa `baranggaydb` database at gumagamit ng `users` at `resident` tables.
+- Gumagamit ng prepared statements ang database queries.
+- Naka-hash ang mga password at vine-verify ito sa sign-in.
+- Pare-pareho ang internal CSS style ng mga page.
 
 
 
